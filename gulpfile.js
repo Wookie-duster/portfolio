@@ -13,7 +13,8 @@ var gulp = require('gulp'),
 	include = require('gulp-file-include'),
 	svgstore = require('gulp-svgstore'),
 	rename = require('gulp-rename'),
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+	image = require('gulp-image');
 
 // Sass compiler & autoprefixer
 gulp.task('sass', function() {
@@ -95,12 +96,37 @@ gulp.task('watch', function() {
 });
 
 // Image compressor
-gulp.task('img', function() {
+// gulp.task('img', function() {
+// 	gulp.src('src/img/*')
+// 		.pipe(imagemin())
+// 		.pipe(gulp.dest('build/assets/img'))
+// 		.pipe(browserSync.stream())
+// });
+// gulp.task('img', function(cb) {
+//     gulp.src('src/img/*').pipe(imageop({
+//         optimizationLevel: 5,
+//         progressive: true,
+//         interlaced: true
+//     })).pipe(gulp.dest('build/assets/img')).on('end', cb).on('error', cb);
+// });
+
+gulp.task('img', function () {
 	gulp.src('src/img/*')
-		.pipe(imagemin())
-		.pipe(gulp.dest('build/assets/img'))
-		.pipe(browserSync.stream())
-});
+	  .pipe(image({
+		pngquant: true,
+		optipng: false,
+		zopflipng: true,
+		jpegRecompress: false,
+		mozjpeg: true,
+		guetzli: false,
+		gifsicle: true,
+		svgo: true,
+		concurrent: 10,
+		quiet: true // defaults to false
+	  }))
+	  .pipe(gulp.dest('build/assets/img'))
+	  .pipe(browserSync.stream());
+  });
 
 // favicon
 gulp.task('favicon', function() {
