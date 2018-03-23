@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+        crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Alexander Sytnik</title>
@@ -31,9 +32,8 @@
 
         </div>
     </section>
-
-    <section class="project">
-        <div class="wrap">
+    <script type="text/x-template" id="modal-template-test ">
+        <section class="project">
             <div class="project__description">
                 <h2 class="name">Remount</h2>
                 <p class="subtitle">September - November 2017</p>
@@ -48,225 +48,68 @@
                 </p>
                 <a href="http://remount.me" target="blank" class="link">http://remount.me</a>
             </div>
-            <div class="slider">
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__device">
-                            <img class="content__device__img" src="assets/img/sketch-remount.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        <!-- В первую очередь я слелал макет в Sketch. Был спроектирован UI/UX для мобильной и десктопной версии. -->
-                        First of all I made a layout in Sketch. UI/UX was designed for mobile and desktop versions.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__mobile">
-                            <!-- <img src="assets/img/frame_browser.svg" alt="">
-                                <img src="assets/img/slider__remount-category.png" alt=""> -->
-                            <img class="content__mobile__img" src="assets/img/remount-mobile.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Mobile first and Responsive design.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/remount-grid.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Convert our HTML template to WordPress theme.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <!-- <img class="content__browser__header" src="assets/img/frame_browser.svg" alt=""> -->
-                            <img class="content__browser__img" src="assets/img/remount-admin.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        The content of the site can be managed via WordPress and ACF plugin
-                    </div>
-                </div>
-            </div>
-        </div>
+            div.
+        </section>
+    </script>
+    <script type="text/x-template" id="modal-template">
+        <section class="project">
+            <div class="modal-wrap">
 
-    </section>
-
-    <section class="project">
-        <div class="wrap">
-            <div class="project__description">
-                <h2 class="name">MaxData</h2>
-                <p class="subtitle">December 2017 - February 2018</p>
-                <p class="text">
-                    <!-- MaxData это стартап и он еще находится на стадии разработки. Над ним трудолось три человека: Eugene Moroz, Kirill Beldiaga и я. В данном проекте я настраивал Geth на Azure, писал Smartcontracts на Solidity, разрабатовал frontend на React'e, отправлял транзакции в сеть Ethereum и работал с контрактами через Web3. -->
-                    MaxData is a startup and it is still under development. Three people worked on it: Eugene Moroz, Kirill Beldiaga and myself.
-                    In this project, I set up Geth on Azure, wrote Smartcontracts on Solidity, developed a frontend on React,
-                    sent transactions to the Ethereum network, and worked with contracts through Web3.
-                </p>
-                <p class="text">Technologies: HTML5, React, Mobx, Node, Web3, Solidity, Ethereum</p>
-                <a href="http://maxdata.io" target="blank" class="link">http://maxdata.io</a>
-            </div>
-            <div class="slider">
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/maxdata-remix.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        The tokens contract was upload to blockchain of according to the ERC20 standard with additional functionality.
+            
+                <div class="text-wrap">
+                    <div class="cross" @click="closeModal"></div>
+                    <div class="project__description">
+                        <h2 class="name">{{projectitem.name}}</h2>
+                        <p class="subtitle">{{projectitem.date}}</p>
+                        <p class="text">
+                            {{projectitem.text}}
+                        </p>
+                        <p class="text">
+                            {{projectitem.technologies}}
+                        </p>
+                        <a v-if="projectitem.url !== ''" :href="projectitem.url" target="blank" class="link">{{projectitem.url}}</a>
                     </div>
                 </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__device">
-                            <img class="content__device__img" src="assets/img/maxdata-deploy.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        <!-- В первую очередь я слелал макет в Sketch. Был спроектирован UI/UX для мобильной и десктопной версии. -->
-                        Using web3 library and geth (Ethereum node) we made transactions in the Ethereum network and call functions of the contract.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/maxdata-rfp.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        <!-- С помощью чата записывается предложение о покупке тарифа с определенными условиями. Эта информация хранится в блокчейне. -->
-                        With the help of a chat it is suggested to buy a tariff with certain conditions. This information is stored in the blockchain.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/maxdata-ui.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        <!-- MaxData это single page aplication. В конечном результате app будет работать через webview на десктопе и мобильных устройствах. -->
-                        MaxData is a single page application. In the end, the app will work through webview on the desktop and mobile devices.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="project">
-        <div class="wrap">
-            <div class="project__description">
-                <h2 class="name">Tehnofon</h2>
-                <p class="subtitle">December 2016</p>
-                <p class="text">
-                    Это интернет магазин на OpenCart.
-                </p>
-                <p class="text">Technologies: HTML5, PHP, OpenCart</p>
-                <a href="http://tehnofon.com.ua" target="blank" class="link">http://tehnofon.com.ua</a>
-            </div>
-            <div class="slider">
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/tehnofone.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Lorem ipsum Proident proident esse ut officia ut ad dolor sint proident in dolor ad mollit id ullamco dolor et nostrud.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                        <div class="slider__slide__content">
-                            <div class="content__browser">
-                                <img class="content__browser__img" src="assets/img/tehnofon.gif" alt="">
+            
+                <div class="slider-wrap">
+                    <div class="slider">
+                        <div class="slider__slide" v-for="slide in projectitem.slider">
+                            <div class="slider__slide__content">
+                                <div :class="slide.type">
+                                    <img v-if="slide.type !== 'content__mobile'" class="content__device__img" :src="slide.image.url" :alt="slide.image.alt">
+                                    <img v-if="slide.type == 'content__mobile'" class="content__mobile__img" :src="slide.image.url" :alt="slide.image.alt">
+                                </div>
+                            </div>
+                            <div class="slider__slide__description">
+                                {{slide.description}}
                             </div>
                         </div>
-                        <div class="slider__slide__description">
-                            Lorem ipsum Proident proident esse ut officia ut ad dolor sint proident in dolor ad mollit id ullamco dolor et nostrud.
-                        </div>
-                    </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/providers.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Lorem ipsum Proident proident esse ut officia ut ad dolor sint proident in dolor ad mollit id ullamco dolor et nostrud.
                     </div>
                 </div>
-            </div>
-        </div>
+                </div>
+        </section> 
+    </script>
 
-    </section>
+    <script type="text/x-template" id="project-template">
+        <div class="vasa" @click="openModal(index, item)"></div>
+    </script>
 
-    <section class="project">
-        <div class="wrap">
-            <div class="project__description">
-                <h2 class="name">Art-insurance</h2>
-                <p class="subtitle">December 2016</p>
-                <p class="text">
-                    It's the company internal system system, which allows insurance brokers to serve all of their customer in one place. The
-                    system contains calculators for different types of car and healthcare insurance policies, prints out
-                    filled documents, stores the data about them, reminds customers about expiration of the contract.
-                </p>
-                <p class="text">Technologies: HTML5, Bootstrap, PHP</p>
-            </div>
-            <div class="slider">
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/art-insurance.png" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Lorem ipsum Proident proident esse ut officia ut ad dolor sint proident in dolor ad mollit id ullamco dolor et nostrud.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__mobile">
-                            <!-- <img src="assets/img/frame_browser.svg" alt="">
-                                <img src="assets/img/slider__remount-category.png" alt=""> -->
-                            <img class="content__mobile__img" src="assets/img/art-insurance-mobile.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Mobile first and Responsive design.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/art-insurance.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Lorem ipsum Proident proident esse ut officia ut ad dolor sint proident in dolor ad mollit id ullamco dolor et nostrud.
-                    </div>
-                </div>
-                <div class="slider__slide">
-                    <div class="slider__slide__content">
-                        <div class="content__browser">
-                            <img class="content__browser__img" src="assets/img/art-insurance-list.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="slider__slide__description">
-                        Lorem ipsum Proident proident esse ut officia ut ad dolor sint proident in dolor ad mollit id ullamco dolor et nostrud.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="app" class="main">
+        <project v-for="(item, index) in projects" :item="item" :index="index" v-bind:key="index"></project>
+        <transition name="hello">
+            <modal v-if="modal" :projects="projects" :projectitem="projectitem"></modal>
+        </transition>
+        
+        <transition name="ripple-mask">
+            <div class="ripple" v-if="modal"></div>
+        </transition>
 
-    </section>
+
+    </div>
+
+
+
+    
 
     <footer class="footer">
         <div class="icons">
@@ -287,22 +130,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="assets/js/main.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slider').slick({
-                draggable: true,
-                infinite: false,
-                prevArrow: null,
-                nextArrow: null,
-                slidesToShow: 1,
-                dots: true,
-                centerMode: true,
-                centerPadding: '8%',
-                focusOnSelect: true
-            });
-        });
+        
     </script>
 </body>
 
