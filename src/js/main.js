@@ -126,8 +126,8 @@ Vue.component('project', {
         index: Number
     },
     methods: {
-        openModal: function (index, item) {
-            this.$root.openModal(index, item);
+        openModal: function (event, index, item) {
+            this.$root.openModal(event, index, item);
             
         },
         closeModal: function () {
@@ -158,9 +158,10 @@ var app = new Vue({
         projectitem: {}
     },
     methods: {
-        openModal: function(key, item) {
-            console.log(item);
+        openModal: function(event, key, item) {
             var e = event;
+            console.log(e);
+            
             
             this.projectitem = item;
             this.modal = true;
