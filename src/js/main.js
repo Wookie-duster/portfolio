@@ -11,6 +11,7 @@ var projects = [
         text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose. Frontend was made by a team of two people: Eugene Moroz and me. I did rest of the work.',
         technologies: 'Technologies: HTML5, Gulp, PHP, WordPress',
         url: 'http://remount.me',
+        logo: 'assets/img/remount-logo.png',
         slider: [
             {
                 type: 'content__device',
@@ -40,6 +41,7 @@ var projects = [
         text: 'MaxData is a startup and it is still under development. Three people worked on it: Eugene Moroz, Kirill Beldiaga and myself. In this project, I set up Geth on Azure, wrote Smartcontracts on Solidity, developed a frontend on React, sent transactions to the Ethereum network, and worked with contracts through Web3.',
         technologies: 'Technologies: HTML5, React, Mobx, Node, Web3, Solidity, Ethereum',
         url: 'http://maxdata.io',
+        logo: 'assets/img/maxdata-logo.png',
         slider: [
             {
                 type: 'content__browser',
@@ -69,6 +71,7 @@ var projects = [
         text: 'Это интернет магазин на OpenCart.',
         technologies: 'Technologies: HTML5, PHP, OpenCart',
         url: 'http://tehnofon.com.ua',
+        logo: 'assets/img/tehnofon-logo.png',
         slider: [
             {
                 type: 'content__browser',
@@ -93,6 +96,7 @@ var projects = [
         text: "It's the company internal system system, which allows insurance brokers to serve all of their customer in one place. The system contains calculators for different types of car and healthcare insurance policies, prints out filled documents, stores the data about them, reminds customers about expiration of the contract.",
         technologies: 'Technologies: HTML5, Bootstrap, PHP',
         url: '',
+        logo: 'assets/img/art-insurance-logo.png',
         slider: [
             {
                 type: 'content__browser',
@@ -160,11 +164,11 @@ var app = new Vue({
     methods: {
         openModal: function(event, key, item) {
             var e = event;
-            console.log(e);
+            var self = this;
             
             
-            this.projectitem = item;
-            this.modal = true;
+            self.projectitem = item;
+            self.modal = true;
 
             setTimeout(function(){
                 $('.ripple').css({
@@ -188,8 +192,18 @@ var app = new Vue({
                     focusOnSelect: true
                 });
             });
+
+            //esc to close modal
+            $(document).on('keyup', function(ev) {
+                if (ev.keyCode === 27) {
+                    self.modal = false;
+                    $('body').removeClass('fixed');
+                }
+            })
         },
         closeModal: function(e) {
+            console.log(this);
+            
             this.modal = false;
             $('body').removeClass('fixed');
         }

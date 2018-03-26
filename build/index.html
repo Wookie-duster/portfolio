@@ -32,25 +32,7 @@
 
         </div>
     </section>
-    <script type="text/x-template" id="modal-template-test ">
-        <section class="project">
-            <div class="project__description">
-                <h2 class="name">Remount</h2>
-                <p class="subtitle">September - November 2017</p>
-                <!-- <p class="text">Была поставлена задача сделать сайт сервисного центра с удобным доступом к ценам на поределенную услугу, блогом и отзывамы. Для этого был выбран WordPress. Frontend делался командой из двух человек: Женя Мороз и я. Всю остальную работу выполнил я.</p> -->
-                <p class="text">
-                    The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and
-                    feedback. WordPress was chosen for this purpose. Frontend was made by a team of two people: Eugene Moroz
-                    and me. I did rest of the work.
-                </p>
-                <p class="text">
-                    Technologies: HTML5, Gulp, PHP, WordPress
-                </p>
-                <a href="http://remount.me" target="blank" class="link">http://remount.me</a>
-            </div>
-            div.
-        </section>
-    </script>
+
     <script type="text/x-template" id="modal-template">
         <section class="project">
             <div class="modal-wrap">
@@ -91,11 +73,20 @@
     </script>
 
     <script type="text/x-template" id="project-template">
-        <div class="vasa" @click="openModal($event, index, item)"></div>
+        <div class="work" @click="openModal($event, index, item)">
+            <img :src="item.logo" alt="" class="work__img">
+            <!-- <p class="work__description">MaxData</p> -->
+            <div class="work__border"></div>
+        </div>
     </script>
 
     <div id="app" class="main">
-        <project v-for="(item, index) in projects" :item="item" :index="index" v-bind:key="index"></project>
+        <div class="projects">
+            <div class="wrap">
+                <project v-for="(item, index) in projects" :item="item" :index="index" v-bind:key="index"></project>
+            </div>
+        </div>
+        
         <transition name="hello">
             <modal v-if="modal" :projects="projects" :projectitem="projectitem"></modal>
         </transition>
