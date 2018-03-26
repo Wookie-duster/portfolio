@@ -4,7 +4,7 @@ $(document).ready(function(){
     $("head").append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">');
     $("head").append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">');
     $("head").append('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">');
-    $("head").append('<link rel="stylesheet" href="assets/css/styles.css">');
+    // $("head").append('<link rel="stylesheet" href="assets/css/styles.css">');
 
     
 })
