@@ -4,15 +4,13 @@ $(document).ready(function(){
     $("head").prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">');
     $("head").prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">');
     $("head").prepend('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">');
-    // $("head").append('<link rel="stylesheet" href="assets/css/styles.css">');
-
-    
 })
 
 var projects = [
     {
         name: 'Remount',
-        date: 'September - November 2017',
+        date: 'October - November 2017',
+        type: 'Website',
         text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose. Frontend was made by a team of two people: Eugene Moroz and me. I did rest of the work.',
         technologies: 'Technologies: HTML5, Gulp, PHP, WordPress',
         url: 'http://remount.me',
@@ -43,6 +41,7 @@ var projects = [
     {
         name: 'MaxData',
         date: 'December 2017 - February 2018',
+        type: 'DApp',
         text: 'MaxData is a startup and it is still under development. Three people worked on it: Eugene Moroz, Kirill Beldiaga and myself. In this project, I set up Geth on Azure, wrote Smartcontracts on Solidity, developed a frontend on React, sent transactions to the Ethereum network, and worked with contracts through Web3.',
         technologies: 'Technologies: HTML5, React, Mobx, Node, Web3, Solidity, Ethereum',
         url: 'http://maxdata.io',
@@ -73,6 +72,7 @@ var projects = [
     {
         name: 'Tehnofon',
         date: 'December 2016',
+        type: '',
         text: 'Это интернет магазин на OpenCart.',
         technologies: 'Technologies: HTML5, PHP, OpenCart',
         url: 'http://tehnofon.com.ua',
@@ -98,6 +98,7 @@ var projects = [
     {
         name: 'Art-insurance',
         date: 'December 2016',
+        type: 'WebApp',
         text: "It's the company internal system system, which allows insurance brokers to serve all of their customer in one place. The system contains calculators for different types of car and healthcare insurance policies, prints out filled documents, stores the data about them, reminds customers about expiration of the contract.",
         technologies: 'Technologies: HTML5, Bootstrap, PHP',
         url: '',
@@ -206,9 +207,7 @@ var app = new Vue({
                 }
             })
         },
-        closeModal: function(e) {
-            console.log(this);
-            
+        closeModal: function(e) {            
             this.modal = false;
             $('body').removeClass('fixed');
         }

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -18,14 +19,45 @@
                 <h1 class="title">Alexander Sytnik</h1>
                 <p class="subtitle">Junior Frontend developer</p>
                 <p class="text">Hello. This page was created in order to show a few of my works.</p>
-                <!-- <p class="text">I am engaged in web development since 2016. На данный момент я half-part student.</p> -->
             </div>
-            <div class="about__photo">
-                <div class="about__photo__img"></div>
-            </div>
-
         </div>
     </section>
+
+    <div id="app" class="main">
+        <div class="projects">
+            <div class="wrap">
+                <project v-for="(item, index) in projects" :item="item" :index="index" v-bind:key="index"></project>
+            </div>
+        </div>
+
+        <transition name="hello">
+            <modal v-if="modal" :projects="projects" :projectitem="projectitem"></modal>
+        </transition>
+
+        <transition name="ripple-mask">
+            <div class="ripple" v-if="modal"></div>
+        </transition>
+
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="icons">
+            <a href="https://www.facebook.com/Sytnik13" class="icons__item" target="blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/Wookie-duster" class="icons__item" target="blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sytnik13/" class="icons__item" target="blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="footer__copyrights">
+
+        </div>
+    </footer>
 
     <script type="text/x-template" id="modal-template">
         <section class="project">
@@ -68,54 +100,25 @@
 
     <script type="text/x-template" id="project-template">
         <div class="work" @click="openModal($event, index, item)">
-            <img :src="item.logo" alt="" class="work__img">
-            <!-- <p class="work__description">MaxData</p> -->
-            <div class="work__border"></div>
-        </div>
-    </script>
-
-    <div id="app" class="main">
-        <div class="projects">
-            <div class="wrap">
-                <project v-for="(item, index) in projects" :item="item" :index="index" v-bind:key="index"></project>
+            <div class="work__part">
+                <div class="work__wrap">
+                    <h2 class="name">{{item.name}}</h2>
+                    <div class="work__description__initial">
+                        <p class="subtitle">{{item.date}}</p>
+                        <p class="text">
+                            {{item.type}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="work__part">
+                <img :src="item.logo" alt="" class="work__img">
             </div>
         </div>
-
-        <transition name="hello">
-            <modal v-if="modal" :projects="projects" :projectitem="projectitem"></modal>
-        </transition>
-
-        <transition name="ripple-mask">
-            <div class="ripple" v-if="modal"></div>
-        </transition>
-
-
-    </div>
-
-
-
-
-
-    <footer class="footer">
-        <div class="icons">
-            <a href="https://www.facebook.com/Sytnik13" class="icons__item">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://github.com/Wookie-duster" class="icons__item">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/sytnik13/" class="icons__item">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-        <div class="footer__copyrights">
-
-        </div>
-    </footer>
-
+    </script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" defer></script>
     <script src="assets/js/main.min.js" defer></script>
 </body>
 

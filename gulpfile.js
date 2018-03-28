@@ -111,18 +111,7 @@ gulp.task('watch', function() {
 
 gulp.task('img', function () {
 	gulp.src('src/img/*')
-	  .pipe(image({
-		pngquant: true,
-		optipng: false,
-		zopflipng: true,
-		jpegRecompress: false,
-		mozjpeg: true,
-		guetzli: false,
-		gifsicle: true,
-		svgo: true,
-		concurrent: 10,
-		quiet: true // defaults to false
-	  }))
+	  .pipe(image())
 	  .pipe(gulp.dest('build/assets/img'))
 	  .pipe(browserSync.stream());
   });
