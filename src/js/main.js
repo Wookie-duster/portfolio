@@ -188,7 +188,7 @@ var app = new Vue({
             $('#slider').ready(function() {
                 alert('ready');
                 
-                $('.slider').slick({
+                $('#slider').slick({
                     draggable: true,
                     infinite: false,
                     prevArrow: null,
@@ -217,9 +217,9 @@ var app = new Vue({
     }
 });
 $('#slider').ready(function() {
-    alert('ready');
+    // alert('ready');
     
-    $('.slider').slick({
+    $('#slider').slick({
         draggable: true,
         infinite: false,
         prevArrow: null,
