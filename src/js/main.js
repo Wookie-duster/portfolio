@@ -184,8 +184,8 @@ var app = new Vue({
             }, 1)
 
             $('body').addClass('fixed');
-
-            $(document).ready(function() {
+            
+            $('.slider').ready(function() {
                 $('.slider').slick({
                     draggable: true,
                     infinite: false,
