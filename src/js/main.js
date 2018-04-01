@@ -14,7 +14,7 @@ var projects = [
         text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose. Frontend was made by a team of two people: Eugene Moroz and me. I did rest of the work.',
         technologies: 'Technologies: HTML5, Gulp, PHP, WordPress',
         url: 'http://remount.me',
-        logo: 'assets/img/remount-logo.png',
+        logo: 'assets/img/remount-text.png',
         slider: [
             {
                 type: 'content__device',
@@ -185,7 +185,7 @@ var app = new Vue({
 
             $('body').addClass('fixed');
 
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $('.slider').slick({
                     draggable: true,
                     infinite: false,
@@ -197,7 +197,8 @@ var app = new Vue({
                     centerPadding: '8%',
                     focusOnSelect: true
                 });
-            });
+            })
+            
 
             //esc to close modal
             $(document).on('keyup', function(ev) {

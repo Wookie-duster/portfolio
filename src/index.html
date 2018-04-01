@@ -7,17 +7,30 @@
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="description" content="">
+
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Alexander Sytnik</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PGNDZH7');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGNDZH7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <section class="about">
         <div class="wrap">
             <div class="about__description">
                 <h1 class="title">Alexander Sytnik</h1>
-                <p class="subtitle">Junior Frontend developer</p>
+                <h2 class="subtitle">Junior Frontend developer</h2>
                 <p class="text">Hello. This page was created in order to show a few of my works.</p>
             </div>
         </div>
@@ -65,7 +78,9 @@
 
 
                 <div class="text-wrap">
-                    <div class="cross" @click="closeModal"></div>
+                    <div class="cross" @click="closeModal">
+                        <div class="cross__text">ESC</div>
+                    </div>
                     <div class="project__description">
                         <h2 class="name">{{projectitem.name}}</h2>
                         <p class="subtitle">{{projectitem.date}}</p>
@@ -102,7 +117,7 @@
         <div class="work" @click="openModal($event, index, item)">
             <div class="work__part">
                 <div class="work__wrap">
-                    <h2 class="name">{{item.name}}</h2>
+                    <h3 class="name">{{item.name}}</h3>
                     <div class="work__description__initial">
                         <p class="subtitle">{{item.date}}</p>
                         <p class="text">
