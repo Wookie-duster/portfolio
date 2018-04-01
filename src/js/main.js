@@ -216,3 +216,18 @@ var app = new Vue({
         }
     }
 });
+$('#slider').ready(function() {
+    alert('ready');
+    
+    $('.slider').slick({
+        draggable: true,
+        infinite: false,
+        prevArrow: null,
+        nextArrow: null,
+        slidesToShow: 1,
+        dots: true,
+        centerMode: true,
+        centerPadding: '8%',
+        focusOnSelect: true
+    });
+})
