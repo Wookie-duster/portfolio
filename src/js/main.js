@@ -176,18 +176,16 @@ var app = new Vue({
             self.projectitem = item;
             self.modal = true;
 
-            setTimeout(function(){
+            $('.ripple').ready(function() {
                 $('.ripple').css({
                     left: e.clientX,
                     top: e.clientY
                 })
-            }, 1)
+            })
 
             $('body').addClass('fixed');
             
-            $('#slider').ready(function() {
-                alert('ready');
-                
+            $('#slider').ready(function() {                
                 $('#slider').slick({
                     draggable: true,
                     infinite: false,
@@ -217,7 +215,6 @@ var app = new Vue({
     }
 });
 $('#slider').ready(function() {
-    // alert('ready');
     
     $('#slider').slick({
         draggable: true,
