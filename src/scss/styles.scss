@@ -277,12 +277,24 @@ body {
     height: 50px;
     right: 10px;
     top: 10px;
-    
+    &__text {
+        display: none;
+    }
     
     @media (min-width: 940px) {
         left: 50px;
         top: 50px;
         right: unset;
+
+        &__text {
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 13px;
+            color: #fff;
+            font-size: 8px;
+            font-weight: 300;
+        }
     }
     cursor: pointer;
     transition: all .4s ease;

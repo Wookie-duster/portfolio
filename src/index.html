@@ -78,7 +78,9 @@
 
 
                 <div class="text-wrap">
-                    <div class="cross" @click="closeModal"></div>
+                    <div class="cross" @click="closeModal">
+                        <div class="cross__text">ESC</div>
+                    </div>
                     <div class="project__description">
                         <h2 class="name">{{projectitem.name}}</h2>
                         <p class="subtitle">{{projectitem.date}}</p>
