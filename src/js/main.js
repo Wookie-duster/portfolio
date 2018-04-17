@@ -1,18 +1,20 @@
-'use strict'
+'use strict';
 $(document).ready(function(){
+    //init css
     $("head").prepend('<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">');
     $("head").prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">');
     $("head").prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">');
     $("head").prepend('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">');
-})
+});
 
+//content
 var projects = [
     {
         name: 'Remount',
         date: 'October - November 2017',
         type: 'Website',
         text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose. Frontend was made by a team of two people: Eugene Moroz and me. I did rest of the work.',
-        technologies: 'Technologies: HTML5, Gulp, PHP, WordPress',
+        technologies: 'Technologies: HTML5, PHP, WordPress',
         url: 'http://remount.me',
         logo: 'assets/img/remount-text.png',
         slider: [
@@ -42,8 +44,8 @@ var projects = [
         name: 'MaxData',
         date: 'December 2017 - February 2018',
         type: 'DApp',
-        text: 'MaxData is a startup and it is still under development. Three people worked on it: Eugene Moroz, Kirill Beldiaga and myself. In this project, I set up Geth on Azure, wrote Smartcontracts on Solidity, developed a frontend on React, sent transactions to the Ethereum network, and worked with contracts through Web3.',
-        technologies: 'Technologies: HTML5, React, Mobx, Node, Web3, Solidity, Ethereum',
+        text: 'MaxData is a startup and it is still under development. In this project, I set up Geth on Azure, wrote Smartcontracts on Solidity, developed a frontend on React, sent transactions to the Ethereum network, and worked with contracts through Web3.',
+        technologies: 'Technologies: HTML5, React, Mobx, Node.js, Web3, Solidity, Ethereum',
         url: 'http://maxdata.io',
         logo: 'assets/img/maxdata-logo.png',
         slider: [
@@ -80,18 +82,18 @@ var projects = [
         slider: [
             {
                 type: 'content__browser',
-                image: {url: 'assets/img/tehnofone.png', alt: 'Tehnofon Page'},
-                description: 'The tokens contract was upload to blockchain of according to the ERC20 standard with additional functionality.',
-            },
-            {
-                type: 'content__browser',
                 image: {url: 'assets/img/tehnofon.gif', alt: 'Tehnofon goods'},
                 description: 'Using web3 library and geth (Ethereum node) we made transactions in the Ethereum network and call functions of the contract.',
             },
             {
+                type: 'content__mobile',
+                image: {url: 'assets/img/tehnofon-mobile.gif', alt: 'Tehnofon Mobile'},
+                description: 'The tokens contract was upload to blockchain of according to the ERC20 standard with additional functionality.',
+            },
+            {
                 type: 'content__browser',
                 image: {url: 'assets/img/providers.png', alt: 'Tehnofon Admin'},
-                description: 'With the help of a chat it is suggested to buy a tariff with certain conditions. This information is stored in the blockchain.',
+                description: 'After the client has issued an order, a list of prices of all vendors is displayed in the admin panel.',
             },
         ]
     },
@@ -153,6 +155,20 @@ Vue.component('modal', {
         projects: Array,
         projectitem: Object
     },
+    mounted: function() {
+        //init slider with settings
+        $('#slider').slick({
+            draggable: true,
+            infinite: false,
+            prevArrow: null,
+            nextArrow: null,
+            slidesToShow: 1,
+            dots: true,
+            centerMode: true,
+            centerPadding: '8%',
+            focusOnSelect: true
+        });
+    },
     methods: {
         closeModal: function () {
             this.$root.closeModal();
@@ -176,6 +192,7 @@ var app = new Vue({
             self.projectitem = item;
             self.modal = true;
 
+            //ripple set coordinates x y
             $('.ripple').ready(function() {
                 $('.ripple').css({
                     left: e.clientX,
@@ -184,21 +201,6 @@ var app = new Vue({
             })
 
             $('body').addClass('fixed');
-            
-            $('#slider').ready(function() {                
-                $('#slider').slick({
-                    draggable: true,
-                    infinite: false,
-                    prevArrow: null,
-                    nextArrow: null,
-                    slidesToShow: 1,
-                    dots: true,
-                    centerMode: true,
-                    centerPadding: '8%',
-                    focusOnSelect: true
-                });
-            })
-            
 
             //esc to close modal
             $(document).on('keyup', function(ev) {
@@ -214,17 +216,3 @@ var app = new Vue({
         }
     }
 });
-$('#slider').ready(function() {
-    
-    $('#slider').slick({
-        draggable: true,
-        infinite: false,
-        prevArrow: null,
-        nextArrow: null,
-        slidesToShow: 1,
-        dots: true,
-        centerMode: true,
-        centerPadding: '8%',
-        focusOnSelect: true
-    });
-})
