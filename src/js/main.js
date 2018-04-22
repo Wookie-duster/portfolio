@@ -13,7 +13,7 @@ var projects = [
         name: 'Remount',
         date: 'October - November 2017',
         type: 'Website',
-        text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose. Frontend was made by a team of two people: Eugene Moroz and me. I did rest of the work.',
+        text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose.',
         technologies: 'Technologies: HTML5, PHP, WordPress',
         url: 'http://remount.me',
         logo: 'assets/img/remount-text.png',
@@ -44,7 +44,7 @@ var projects = [
         name: 'MaxData',
         date: 'December 2017 - February 2018',
         type: 'DApp',
-        text: 'MaxData is a startup and it is still under development. In this project, I set up Geth on Azure, wrote Smartcontracts on Solidity, developed a frontend on React, sent transactions to the Ethereum network, and worked with contracts through Web3.',
+        text: "MaxData is a startup in the field of advertising telecommunications and it is still under development. The mission of MaxData is to build system where consumers and service providers interact directly. In this project we used Ethereum blockchain technoligies to create ERC20 tokens (MXD). MXD coins will be issued to the user for share his private infotmation.",
         technologies: 'Technologies: HTML5, React, Mobx, Node.js, Web3, Solidity, Ethereum',
         url: 'http://maxdata.io',
         logo: 'assets/img/maxdata-logo.png',
@@ -83,12 +83,12 @@ var projects = [
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/tehnofon.gif', alt: 'Tehnofon goods'},
-                description: 'Using web3 library and geth (Ethereum node) we made transactions in the Ethereum network and call functions of the contract.',
+                description: "The template was purchased and it was completed for client's tasks.",
             },
             {
                 type: 'content__mobile',
                 image: {url: 'assets/img/tehnofon-mobile.gif', alt: 'Tehnofon Mobile'},
-                description: 'The tokens contract was upload to blockchain of according to the ERC20 standard with additional functionality.',
+                description: 'The site is fully accessible on mobile devices.',
             },
             {
                 type: 'content__browser',
