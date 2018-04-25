@@ -13,7 +13,7 @@ var projects = [
         name: 'Remount',
         date: 'October - November 2017',
         type: 'Website',
-        text: 'The task was set to make the site of a service center with convenient access to prices for a reduced service, a blog and feedback. WordPress was chosen for this purpose.',
+        text: 'The goal of this project was to make the website for service center with convenient access to prices page, to service page, to blog and feedback pages. WordPress was chosen for this purpose.',
         technologies: 'Technologies: HTML5, PHP, WordPress',
         url: 'http://remount.me',
         logo: 'assets/img/remount-text.png',
@@ -31,7 +31,7 @@ var projects = [
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/remount-grid.gif', alt: 'Remount Hovers'},
-                description: 'Convert our HTML template to WordPress theme.',
+                description: 'I have converted our HTML template to WordPress theme.',
             },
             {
                 type: 'content__browser',
@@ -44,7 +44,7 @@ var projects = [
         name: 'MaxData',
         date: 'December 2017 - February 2018',
         type: 'DApp',
-        text: "MaxData is a startup in the field of advertising telecommunications and it is still under development. The mission of MaxData is to build system where consumers and service providers interact directly. In this project we used Ethereum blockchain technoligies to create ERC20 tokens (MXD). MXD coins will be issued to the user for share his private infotmation.",
+        text: "MaxData is a startup in the field of advertising telecommunications and it is still under development. The goal of MaxData is to build system where consumers and service providers interact with each other directly. In this project we used Ethereum blockchain technologies to create ERC20 tokens (MXD). MXD coins will be issued to the user for share his private infotmation.",
         technologies: 'Technologies: HTML5, React, Mobx, Node.js, Web3, Solidity, Ethereum',
         url: 'http://maxdata.io',
         logo: 'assets/img/maxdata-logo.png',
@@ -52,22 +52,22 @@ var projects = [
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/maxdata-remix.png', alt: 'MaxData Solidity'},
-                description: 'The tokens contract was upload to blockchain of according to the ERC20 standard with additional functionality.',
+                description: 'The tokens contract was uploaded to blockchain in accordance to the ERC20 standard with additional functionality.',
             },
             {
                 type: 'content__device',
                 image: {url: 'assets/img/maxdata-deploy.png', alt: 'MaxData Mist'},
-                description: 'Using web3 library and geth (Ethereum node) we made transactions in the Ethereum network and call functions of the contract.',
+                description: 'By using web3 library and geth (Ethereum node) we made transactions in the Ethereum network and called functions of the contract.',
             },
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/maxdata-rfp.gif', alt: 'MaxData Chat'},
-                description: 'With the help of a chat it is suggested to buy a tariff with certain conditions. This information is stored in the blockchain.',
+                description: 'A chat bot suggests to buy a tariff with different options. This information is stored in the blockchain.',
             },
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/maxdata-ui.gif', alt: 'MaxData UI'},
-                description: 'MaxData is a single page application. In the end, the app will work through webview on the desktop and mobile devices.',
+                description: 'MaxData is a single page application. In the end, the app will work through webview on desktop and mobile devices.',
             },
         ]
     },
@@ -75,7 +75,7 @@ var projects = [
         name: 'Tehnofon',
         date: 'December 2016',
         type: '',
-        text: 'Tehnofon: just good web store, based on Opecart engine. Some features were developed exclusively for client accordingly to company needs, such accessories management and communication with supplier systems.',
+        text: 'Tehnofon: just good web store developed on Opecart engine. Some features were developed exclusively for the client accordingly to company needs.',
         technologies: 'Technologies: HTML5, PHP, OpenCart',
         url: 'http://tehnofon.com.ua',
         logo: 'assets/img/tehnofon-logo.png',
@@ -83,7 +83,7 @@ var projects = [
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/tehnofon.gif', alt: 'Tehnofon goods'},
-                description: "The template was purchased and it was completed for client's tasks.",
+                description: "At first we bought a template which was upgraded for client's needs.",
             },
             {
                 type: 'content__mobile',
@@ -93,7 +93,7 @@ var projects = [
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/providers.png', alt: 'Tehnofon Admin'},
-                description: 'After the client has issued an order, a list of prices of all vendors is displayed in the admin panel.',
+                description: 'After the client has issued an order, a list of prices of all vendors is displayed in admin panel.',
             },
         ]
     },
@@ -101,7 +101,7 @@ var projects = [
         name: 'Art-insurance',
         date: 'December 2016',
         type: 'WebApp',
-        text: "It's the company internal system, which allows insurance brokers to serve all of their customer in one place. The system contains calculators for different types of car and healthcare insurance policies, prints out filled documents, stores the data about them, reminds customers about expiration of the contract.",
+        text: "It's the company's internal system, which allows insurance brokers to serve all of their customers in one place. The system contains calculators for different types of car and healthcare insurance policies, it prints out filled documents, stores the data about them, reminds customers about expiration of the contract.",
         technologies: 'Technologies: HTML5, Bootstrap, PHP',
         url: '',
         logo: 'assets/img/art-insurance-logo.png',
@@ -114,17 +114,17 @@ var projects = [
             {
                 type: 'content__mobile',
                 image: {url: 'assets/img/art-insurance-mobile.gif', alt: 'Art-insurance Mobile'},
-                description: 'All functionality is available on the mobile device.',
+                description: 'All functionality is available on mobile devices.',
             },
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/art-insurance.gif', alt: 'Art-insurance Calculator'},
-                description: 'The system calculates the price of the contract, depending on the coefficients and selected parameters.',
+                description: 'The system calculates the price of the contract, depending on coefficients and selected parameters.',
             },
             {
                 type: 'content__browser',
                 image: {url: 'assets/img/art-insurance-list.gif', alt: 'Art-insurance List'},
-                description: 'In the end, the contract and receipt are printed.',
+                description: 'In the end, the contract and receipt are printed out.',
             },
         ]
     },
